@@ -1,0 +1,18 @@
+{
+  "request":
+  {
+    "urlPattern": "/track\\?(.*)",
+    "method": "GET"
+
+  },
+  "response":
+  {
+    "headers":
+    {
+      "Access-Control-Allow-Origin" : "*"
+    },
+    "status": 200,
+    "body": "",
+    "transformers": ["json-extractor"]
+  }
+}

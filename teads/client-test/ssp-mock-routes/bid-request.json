@@ -1,0 +1,20 @@
+{
+  "request":
+  {
+    "url": "/hb/index/bid-request",
+    "method": "POST"
+
+  },
+  "response":
+  {
+    "headers":
+    {
+      "Access-Control-Allow-Origin" : "*"
+    },
+    "status": 200,
+
+    "body": "{\r\n\"responses\": [{\r\n  \"requestId\": \"${$.data[0].requestId}\",\r\n  \"cpm\": 1,\r\n  \"width\": \"${$.data[0].sizes[0][0]}\",\r\n  \"height\": \"${$.data[0].sizes[0][1]}\",\r\n  \"ad\": \"<script type=\\\"text\/javascript\\\" class=\\\"teads\\\" src=\\\"https:\/\/$WIREMOCK_HOST:$WIREMOCK_PORT\/hb\/index\/ad\\\"><\/script>\"\r\n}]\r\n}\r\n",
+    "transformers": ["json-extractor"]
+
+  }
+}

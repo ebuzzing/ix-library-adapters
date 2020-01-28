@@ -67,3 +67,24 @@ To run the system tests, go to either:
     HTTP:  http://localhost:5837/public/tester/system-tester.html
     HTTPS: https://localhost:5838/public/tester/system-tester.html
 ```
+
+If you want to check the display of a Teads ad via the debugger, follow the instructions:
+```
+To start the debugger, launch the script:
+
+    ./start-debugger.sh
+
+Please make sure to have accepted certificate for https://localhost:8443
+
+Then go to either:
+
+    HTTP: http://localhost:5837/public/debugger/adapter-debugger.html
+    HTTPS: https://localhost:5838/public/debugger/adapter-debugger.html
+```
+
+If you want to manually update the SSP mocks used by the debugger tool, you will need to update one of the following files in `teads/client-test/ssp-mock-routes`:
+```
+- bid-request.json (contacted by the adapter once an index exchange request is generated, should return a valid index exchange bid response)
+- ad.json (contactd by the adapter once our SSP has won the final auction, should return a valid ad)
+- tracking.json (contacted via the tracking urls present in the ad VAST)
+```
